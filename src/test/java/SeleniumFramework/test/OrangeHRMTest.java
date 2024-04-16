@@ -18,7 +18,7 @@ public class OrangeHRMTest extends BaseTest {
 		
 		//retryAnalyzer= SeleniumFramework.TestComponent.Retry.class
 	
-			@Test(dataProvider="getData", groups= "Parches")
+			@Test(dataProvider="getData", groups= "Parches", retryAnalyzer= SeleniumFramework.TestComponent.Retry.class)
 			public void addNewEMP(HashMap<String, String> input) throws InterruptedException {
 				
 			String terminationReasonNote ="\"\\\"The process ended due to completion of its task, user \"\r\n"
