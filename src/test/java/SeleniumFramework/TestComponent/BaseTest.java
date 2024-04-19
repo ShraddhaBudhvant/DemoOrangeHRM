@@ -52,7 +52,7 @@ public class BaseTest {
 			//chrome driver path
 			
 		ChromeOptions option = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
+		WebDriverManager.chromedriver().browserVersion("121.0.6167.185").setup();
 		
 		if(browserName.contains("headless")) 
 		{
