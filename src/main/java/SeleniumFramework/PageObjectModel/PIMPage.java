@@ -19,10 +19,6 @@ public class PIMPage extends AbstractComponents {
 	}
 	
 	
-	
-	@FindBy(xpath="(//button[normalize-space()='Add'])[1]")
-	WebElement AddBtn;
-	
 	@FindBy(name="firstName")
 	WebElement firstname;
 	
@@ -36,41 +32,27 @@ public class PIMPage extends AbstractComponents {
 	WebElement empID;
 	
 	@FindBy(css="button[type='submit']")
-	WebElement Add;
-	// .orangehrm-dialog-modal
-	
-	@FindBy(css=".orangehrm-dialog-modal")
-	WebElement terminationModalBox;
-	
-	@FindBy(css=".oxd-userdropdown")
-	WebElement profileHeader;
-	
-	@FindBy(xpath="//a[normalize-space()='Logout']")
-	WebElement logoutBtn;
+	WebElement Save;
 	
 	
-	
-	public EmployeeList addEmployee(String fName, String mName, String lName, String empId) {
-		AddBtn.click();
+	public   EmployeeList addNewEmployee(String fName, String mName, String lName, String empId) {
+		
+				
+		waitForloaderToDisappear();
+		
 		firstname.sendKeys(fName);
 		middlename.sendKeys(mName);
 		lastname.sendKeys(lName);
 		empID.sendKeys(empId);
 		
-		Add.click();
+		//waitForloaderToDisappear();
+		Save.click();
 		
-		EmployeeList eList =new EmployeeList(driver);
-				return eList;
+		
+		return new EmployeeList(driver);
+		
+		
 	}
 	
-	public void logoutEmp() throws InterruptedException {
-		
-		waitForElementToDisappear(terminationModalBox);
-		
-		profileHeader.click();
-		
-		waitForWebElementToAppear(logoutBtn);
-		
-		logoutBtn.click();
-	}
+	
 }

@@ -66,14 +66,7 @@ public class ModifyEmpDetails extends AbstractComponents {
 	driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();*/
 	
 	
-	@FindBy(xpath="(//input[@placeholder='Type for hints...'])[1]")
-	WebElement employeeName;
 	
-	@FindBy(css="button[type='submit']")
-	WebElement empSearchBtn;
-	
-	@FindBy(css=".oxd-icon.bi-pencil-fill")
-	WebElement empDetailEditBtn;
 	
 	@FindBy(css="div:nth-child(6) a:nth-child(1)")
 	WebElement JobInfo;
@@ -102,6 +95,14 @@ public class ModifyEmpDetails extends AbstractComponents {
 	@FindBy(xpath="//div[@role='listbox']")
 	WebElement SaveModifiedInfo;
 	
+	@FindBy(xpath="(//input[@placeholder='Type for hints...'])[1]")
+	WebElement employeeName;
+	
+	@FindBy(css="button[type='submit']")
+	WebElement empSearchBtn;
+	
+	@FindBy(css=".oxd-icon.bi-pencil-fill")
+	WebElement empDetailEditBtn;
 	
 	public void editEmpJobDetails(String fName, String JDate) {
 		employeeName.sendKeys(fName);

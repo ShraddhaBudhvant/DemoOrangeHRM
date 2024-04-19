@@ -5,8 +5,8 @@
     <classes>
       <class name="SeleniumFramework.test.OrangeHRMTest">
         <methods>
-          <include name="addNewEMP" invocation-numbers="0"/>
           <include name="launchApplication"/>
+          <include name="VerifyEditEmployeeDetails"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- SeleniumFramework.test.OrangeHRMTest -->

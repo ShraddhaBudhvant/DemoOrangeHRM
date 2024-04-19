@@ -2,6 +2,7 @@ package SeleniumFramework.PageObjectModel;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -40,6 +41,8 @@ public class TerminateEmp extends AbstractComponents{
 	@FindBy(xpath="(//button[@type='submit'][normalize-space()='Save'])[2]")
 	WebElement submit;
 	
+	@FindBy(xpath="(//p[@class='oxd-text oxd-text--p oxd-text--subtitle-2'])[1]")
+	WebElement terVerify;
 	
 	public EmployeeList termEmp(String note, String EDate) {
 		termEmpBtn.click();
@@ -50,6 +53,11 @@ public class TerminateEmp extends AbstractComponents{
 		
 		EmployeeList eList =new EmployeeList(driver);
 		return eList;
+	}
+	
+	public String verifyEmpTermination() {
+		 
+		return terVerify.getText();
 	}
 }
 

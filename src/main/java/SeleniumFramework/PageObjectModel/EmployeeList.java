@@ -20,7 +20,14 @@ public class EmployeeList extends AbstractComponents {
 		
 	}
 
-	//  //a[normalize-space()='Job']
+	@FindBy(xpath="(//input[@placeholder='Type for hints...'])[1]")
+	WebElement employeeName;
+	
+	@FindBy(css="button[type='submit']")
+	WebElement empSearchBtn;
+	
+	@FindBy(css=".oxd-icon.bi-pencil-fill")
+	WebElement empDetailEditBtn;
 	
 	@FindBy(xpath="//a[normalize-space()='Job']")
 	WebElement jobBtn;
@@ -50,30 +57,37 @@ public class EmployeeList extends AbstractComponents {
 	@FindBy(xpath="//button[normalize-space()='Save']")
 	WebElement SaveModifiedInfo;
 	
-	public void goToJobDetails(String JDate) {
+	
+	public void SearchEmployee(String empName) {
+		employeeName.sendKeys(empName);
+		empSearchBtn.click();
+		waitForloaderToDisappear();
+		scrollPage();
+	}
+	
+	public void EditEmpDetails() {
+		waitForWebElementToAppear(empDetailEditBtn);
+		empDetailEditBtn.click();
+	}
+	
+	
+	public void goToJobDetails() {
 		
+		waitForloaderToDisappear();
 		jobBtn.click();
-		
+	}
+	
+	public void AddJobDetails(String JDate) {
 		waitForWebElementToAppear(JoinedDate);
 		JoinedDate.sendKeys(JDate);
 		
-		//waitForWebElementToAppear(Listbox);
 		jobTitle.click(); Listbox.get(0).click();
-		
-		//waitForWebElementToAppear(Listbox);
 		jobCategery.click(); Listbox.get(0).click();
-		
-		//waitForWebElementToAppear(Listbox);
 		subUnit.click(); Listbox.get(0).click();
-		
-		//waitForWebElementToAppear(Listbox);
 		jobLocation.click(); Listbox.get(0).click();
-		
-		//waitForWebElementToAppear(Listbox);
 		EmpStatus.click(); Listbox.get(0).click();
 		
 		SaveModifiedInfo.click();
-		
 		
 	}
 	
