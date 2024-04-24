@@ -76,7 +76,7 @@
      </profile>
      
 	<profile>
-		  <id>Parches</id>
+		  <id>AddingEmployees</id>
 	<build>
 	<pluginManagement>
 	<plugins>
@@ -86,7 +86,7 @@
         <version>3.2.5</version>
         <configuration>
           <suiteXmlFiles>
-            <suiteXmlFile>testSuites\Parches.xml</suiteXmlFile>
+            <suiteXmlFile>testSuites\addingEmp.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>    

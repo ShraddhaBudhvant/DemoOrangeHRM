@@ -25,7 +25,7 @@ public class OrangeHRMTest extends BaseTest {
 		Assert.assertEquals(driver.getCurrentUrl(), "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index");
 	}
 
-	@Test(dataProvider="getData", priority=1)
+	@Test(dataProvider="getData", priority=1, groups="addingEmployees")
 	public void addNewEMP(HashMap<String, String> input) throws InterruptedException, IOException {
 
 		

@@ -15,7 +15,7 @@ import SeleniumFramework.TestComponent.BaseTest;
 
 public class ErrorValidationTest extends BaseTest {
 
-	@Test (dataProvider="getLoginData", priority=1)
+	@Test (groups= {"ErrorHandling"}, dataProvider="getLoginData", priority=1)
 	public void CheckLoginCredentials(HashMap<String, String> input) {
 		LandingPage LandingPage= new LandingPage(driver);
 		LandingPage.LoginApplication(input.get("username"), input.get("Password"));

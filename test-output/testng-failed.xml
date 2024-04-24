@@ -4,15 +4,20 @@
   <listeners>
     <listener class-name="SeleniumFramework.TestComponent.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Positive Test(failed)">
+    <groups>
+      <run>
+        <include name="addingEmployees"/>
+      </run>
+    </groups>
     <classes>
       <class name="SeleniumFramework.test.OrangeHRMTest">
         <methods>
+          <include name="addNewEMP" invocation-numbers="0"/>
           <include name="launchApplication"/>
-          <include name="VerifyEditEmployeeDetails"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- SeleniumFramework.test.OrangeHRMTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Positive Test(failed) -->
 </suite> <!-- Failed suite [TestNgSuite] -->
