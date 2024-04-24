@@ -31,8 +31,6 @@ public class LandingPage extends AbstractComponents {
 	@FindBy(css=".oxd-alert--error")
 	WebElement ErrorMsg;
 
-	//	@FindBy(css="div.oxd-form-loader")
-	//	WebElement loader;
 
 	public void goTo(){
 

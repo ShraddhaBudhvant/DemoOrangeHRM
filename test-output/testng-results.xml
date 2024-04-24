@@ -1,156 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-19T21:13:41 IST" name="Default suite" finished-at="2024-04-19T21:17:43 IST" duration-ms="242216">
+  <suite started-at="2024-04-23T18:30:21 IST" name="Suite" finished-at="2024-04-23T18:30:53 IST" duration-ms="31236">
     <groups>
     </groups>
-    <test started-at="2024-04-19T21:13:41 IST" name="Default test" finished-at="2024-04-19T21:17:43 IST" duration-ms="242216">
-      <class name="SeleniumFramework.test.OrangeHRMTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFramework.test.OrangeHRMTest@67f639d3]" started-at="2024-04-19T21:13:41 IST" name="launchApplication" finished-at="2024-04-19T21:14:14 IST" duration-ms="33100" status="PASS">
+    <test started-at="2024-04-23T18:30:21 IST" name="Error Validation Test" finished-at="2024-04-23T18:30:53 IST" duration-ms="31236">
+      <class name="SeleniumFramework.test.ErrorValidationTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFramework.test.ErrorValidationTest@1e1a0406]" started-at="2024-04-23T18:30:22 IST" name="launchApplication" finished-at="2024-04-23T18:30:35 IST" duration-ms="12803" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="CheckLoginCredentials(java.util.HashMap)[pri:0, instance:SeleniumFramework.test.OrangeHRMTest@67f639d3]" started-at="2024-04-19T21:14:14 IST" name="CheckLoginCredentials" data-provider="getLoginData" finished-at="2024-04-19T21:14:18 IST" duration-ms="3813" status="PASS">
+        <test-method signature="CheckLoginCredentials(java.util.HashMap)[pri:1, instance:SeleniumFramework.test.ErrorValidationTest@1e1a0406]" started-at="2024-04-23T18:30:35 IST" name="CheckLoginCredentials" data-provider="getLoginData" finished-at="2024-04-23T18:30:37 IST" duration-ms="2736" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{username=Admin, Password=admin123}]]>
+                <![CDATA[{username=dmin, Password=Admin123}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckLoginCredentials -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFramework.test.OrangeHRMTest@67f639d3]" started-at="2024-04-19T21:14:18 IST" name="tearDown" finished-at="2024-04-19T21:14:18 IST" duration-ms="217" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFramework.test.ErrorValidationTest@1e1a0406]" started-at="2024-04-23T18:30:37 IST" name="tearDown" finished-at="2024-04-23T18:30:38 IST" duration-ms="124" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFramework.test.OrangeHRMTest@67f639d3]" started-at="2024-04-19T21:14:18 IST" name="launchApplication" finished-at="2024-04-19T21:14:41 IST" duration-ms="23075" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFramework.test.ErrorValidationTest@1e1a0406]" started-at="2024-04-23T18:30:38 IST" name="launchApplication" finished-at="2024-04-23T18:30:45 IST" duration-ms="7385" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="CheckLoginCredentials(java.util.HashMap)[pri:0, instance:SeleniumFramework.test.OrangeHRMTest@67f639d3]" started-at="2024-04-19T21:14:41 IST" name="CheckLoginCredentials" data-provider="getLoginData" finished-at="2024-04-19T21:14:44 IST" duration-ms="2226" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{username=Admin, Password=Admin123}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CheckLoginCredentials -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFramework.test.OrangeHRMTest@67f639d3]" started-at="2024-04-19T21:14:44 IST" name="tearDown" finished-at="2024-04-19T21:14:44 IST" duration-ms="201" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFramework.test.OrangeHRMTest@67f639d3]" started-at="2024-04-19T21:14:44 IST" name="launchApplication" finished-at="2024-04-19T21:14:53 IST" duration-ms="9445" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="VerifyEditEmployeeDetails()[pri:0, instance:SeleniumFramework.test.OrangeHRMTest@67f639d3]" started-at="2024-04-19T21:14:53 IST" name="VerifyEditEmployeeDetails" finished-at="2024-04-19T21:15:36 IST" duration-ms="42420" status="FAIL">
-          <exception class="java.lang.IndexOutOfBoundsException">
-            <message>
-              <![CDATA[Index 0 out of bounds for length 0]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
-at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
-at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
-at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
-at java.base/java.util.Objects.checkIndex(Objects.java:372)
-at java.base/java.util.ArrayList.get(ArrayList.java:459)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
-at com.sun.proxy.$Proxy22.get(Unknown Source)
-at SeleniumFramework.PageObjectModel.EmployeeList.AddJobDetails(EmployeeList.java:86)
-at SeleniumFramework.test.OrangeHRMTest.VerifyEditEmployeeDetails(OrangeHRMTest.java:67)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IndexOutOfBoundsException -->
+        <test-method signature="VerifyEditEmployeeDetails()[pri:2, instance:SeleniumFramework.test.ErrorValidationTest@1e1a0406]" started-at="2024-04-23T18:30:45 IST" name="VerifyEditEmployeeDetails" finished-at="2024-04-23T18:30:52 IST" duration-ms="7519" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyEditEmployeeDetails -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFramework.test.OrangeHRMTest@67f639d3]" started-at="2024-04-19T21:15:36 IST" name="tearDown" finished-at="2024-04-19T21:15:36 IST" duration-ms="259" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFramework.test.ErrorValidationTest@1e1a0406]" started-at="2024-04-23T18:30:52 IST" name="tearDown" finished-at="2024-04-23T18:30:53 IST" duration-ms="196" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFramework.test.OrangeHRMTest@67f639d3]" started-at="2024-04-19T21:15:36 IST" name="launchApplication" finished-at="2024-04-19T21:15:52 IST" duration-ms="15729" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="VerifyTerminateEmp()[pri:0, instance:SeleniumFramework.test.OrangeHRMTest@67f639d3]" started-at="2024-04-19T21:15:52 IST" name="VerifyTerminateEmp" finished-at="2024-04-19T21:16:27 IST" duration-ms="35129" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyTerminateEmp -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFramework.test.OrangeHRMTest@67f639d3]" started-at="2024-04-19T21:16:27 IST" name="tearDown" finished-at="2024-04-19T21:16:27 IST" duration-ms="204" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFramework.test.OrangeHRMTest@67f639d3]" started-at="2024-04-19T21:16:27 IST" name="launchApplication" finished-at="2024-04-19T21:16:31 IST" duration-ms="4141" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="addNewEMP(java.util.HashMap)[pri:0, instance:SeleniumFramework.test.OrangeHRMTest@67f639d3]" started-at="2024-04-19T21:16:31 IST" name="addNewEMP" data-provider="getData" finished-at="2024-04-19T21:17:13 IST" duration-ms="42346" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{lName=B1, empId=12, fName=Shraddha1, mName=J1, username=Admin, Password=admin123}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addNewEMP -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFramework.test.OrangeHRMTest@67f639d3]" started-at="2024-04-19T21:17:13 IST" name="tearDown" finished-at="2024-04-19T21:17:14 IST" duration-ms="199" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFramework.test.OrangeHRMTest@67f639d3]" started-at="2024-04-19T21:17:14 IST" name="launchApplication" finished-at="2024-04-19T21:17:29 IST" duration-ms="14849" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="verifyEmployeeLogout()[pri:0, instance:SeleniumFramework.test.OrangeHRMTest@67f639d3]" started-at="2024-04-19T21:17:29 IST" name="verifyEmployeeLogout" finished-at="2024-04-19T21:17:43 IST" duration-ms="14154" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyEmployeeLogout -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFramework.test.OrangeHRMTest@67f639d3]" started-at="2024-04-19T21:17:43 IST" name="tearDown" finished-at="2024-04-19T21:17:43 IST" duration-ms="173" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- SeleniumFramework.test.OrangeHRMTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- SeleniumFramework.test.ErrorValidationTest -->
+    </test> <!-- Error Validation Test -->
+  </suite> <!-- Suite -->
 </testng-results>

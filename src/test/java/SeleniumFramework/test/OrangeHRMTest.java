@@ -14,42 +14,35 @@ import SeleniumFramework.PageObjectModel.LogoutPage;
 import SeleniumFramework.PageObjectModel.PIMPage;
 import SeleniumFramework.PageObjectModel.TerminateEmp;
 import SeleniumFramework.TestComponent.BaseTest;
-
+//retryAnalyzer= SeleniumFramework.TestComponent.Retry.class
 
 public class OrangeHRMTest extends BaseTest {
-	//retryAnalyzer= SeleniumFramework.TestComponent.Retry.class
-
-	String terminationReasonNote ="The process ended due to completion of its task, "
-			+ "user interruption, error, or intentional termination by the system or user.";
-
-
+	
 	@Test (dataProvider="getLoginData")
-
 	public void CheckLoginCredentials(HashMap<String, String> input) {
 		LandingPage LandingPage= new LandingPage(driver);
 		LandingPage.LoginApplication(input.get("username"), input.get("Password"));
-
+		Assert.assertEquals(driver.getCurrentUrl(), "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index");
 	}
 
-	@Test(dataProvider="getData")
-
+	@Test(dataProvider="getData", priority=1)
 	public void addNewEMP(HashMap<String, String> input) throws InterruptedException, IOException {
 
 		
 		LandingPage LandingPage= new LandingPage(driver);
-		LandingPage.LoginApplication(input.get("username"), input.get("Password"));
+		LandingPage.LoginApplication("Admin", "admin123");
 
 		PIMPage pim = new PIMPage(driver);
 		pim.goToPIMModule();
 		pim.goToAddEmp();
 		pim.addNewEmployee(input.get("fName"), input.get("mName"), input.get("lName"), input.get("empId"));
-		String suceedText=pim.VerifySucceedText();
+		String suceedText=pim.VerificationText();
 		Assert.assertTrue( suceedText.contains("Success"));
 		
 		
 	}
 	
-	@Test 
+	@Test (priority=2)
 	public void VerifyEditEmployeeDetails() throws InterruptedException {
 		
 		LandingPage LandingPage= new LandingPage(driver);
@@ -66,15 +59,15 @@ public class OrangeHRMTest extends BaseTest {
 		
 		eList.AddJobDetails("2023-01-04");
 		
-		String suceedText=eList.VerifySucceedText();
+		String suceedText=eList.VerificationText();
 		Assert.assertTrue( suceedText.contains("Success"));
 		
 		
 		
 	}
 
-	@Test
-    public void VerifyTerminateEmp() {
+	@Test (dataProvider="getTermDetails", priority=3)
+    public void VerifyTerminateEmp(HashMap<String, String> input) {
     	LandingPage LandingPage= new LandingPage(driver);
 		LandingPage.LoginApplication("Admin", "admin123");
 
@@ -83,20 +76,20 @@ public class OrangeHRMTest extends BaseTest {
 		
 		EmployeeList eList =new EmployeeList(driver);
 		eList.goTOEmpList();
-		eList.SearchEmployee("Shraddha");
+		eList.SearchEmployee(input.get("empName"));
 		eList.EditEmpDetails();
 		eList.goToJobDetails();
 		eList.scrollPage();
 		
 		TerminateEmp terminateEmp = new TerminateEmp(driver);
-		terminateEmp.termEmp(terminationReasonNote, "2024-01-04");
+		terminateEmp.termEmp(input.get("terminationDate"),input.get("terminationReasonNote"));
 		
-		String suceedText=eList.VerifySucceedText();
+		String suceedText=eList.VerificationText();
 		Assert.assertTrue( suceedText.contains("Success"));
 		
     }
     
-   @Test
+   @Test (priority=4)
     public void verifyEmployeeLogout() throws InterruptedException 
     {
     	LandingPage LandingPage= new LandingPage(driver);
@@ -117,6 +110,7 @@ public class OrangeHRMTest extends BaseTest {
     
     
     
+   
     
     
     
@@ -134,9 +128,15 @@ public class OrangeHRMTest extends BaseTest {
 	public Object[][] getLoginData() throws IOException {			
 
 		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"\\src\\test\\java\\framework\\data\\LoginCredentials.json");
-		return new Object[][]{{data.get(0)},{data.get(1)}};
+		return new Object[][]{{data.get(0)}};
 
 	}
+	
+	@DataProvider
+	public Object[][] getTermDetails() throws IOException {			
 
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"\\src\\test\\java\\framework\\data\\terminationDetails.json");
+		return new Object[][]{{data.get(0)}};
 
+	}
 }

@@ -68,7 +68,7 @@ public class AbstractComponents {
 
 	
 
-	public String VerifySucceedText() {
+	public String VerificationText() {
 
 		waitForWebElementToAppear(toaster);
 		return toaster.getText();

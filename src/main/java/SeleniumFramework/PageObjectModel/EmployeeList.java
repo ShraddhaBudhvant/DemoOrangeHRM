@@ -35,7 +35,7 @@ public class EmployeeList extends AbstractComponents {
 	@FindBy(css="input[placeholder='yyyy-dd-mm']")
 	WebElement JoinedDate;
 	
-	@FindBy(xpath="(//div[contains(text(),'-- Select --')])[1]")
+	@FindBy(xpath="(//div)[54]")
 	WebElement jobTitle;
 	
 	@FindBy(xpath="//div[4]//div[1]//div[2]//div[1]//div[1]//div[1]")
@@ -52,7 +52,6 @@ public class EmployeeList extends AbstractComponents {
 	
 	@FindBy(css=".oxd-select-dropdown")
 	List<WebElement> Listbox;
-	////div[@role='listbox']
 	
 	@FindBy(xpath="//button[normalize-space()='Save']")
 	WebElement SaveModifiedInfo;
@@ -61,11 +60,14 @@ public class EmployeeList extends AbstractComponents {
 	public void SearchEmployee(String empName) {
 		employeeName.sendKeys(empName);
 		empSearchBtn.click();
-		waitForloaderToDisappear();
-		scrollPage();
+		
+		
 	}
 	
 	public void EditEmpDetails() {
+		waitForloaderToDisappear();
+		scrollPage();
+		
 		waitForWebElementToAppear(empDetailEditBtn);
 		empDetailEditBtn.click();
 	}
@@ -75,9 +77,11 @@ public class EmployeeList extends AbstractComponents {
 		
 		waitForloaderToDisappear();
 		jobBtn.click();
+		waitForloaderToDisappear();
 	}
 	
 	public void AddJobDetails(String JDate) {
+		
 		waitForWebElementToAppear(JoinedDate);
 		JoinedDate.sendKeys(JDate);
 		
@@ -90,6 +94,8 @@ public class EmployeeList extends AbstractComponents {
 		SaveModifiedInfo.click();
 		
 	}
+	
+	
 	
 	
 }

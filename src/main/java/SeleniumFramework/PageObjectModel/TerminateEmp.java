@@ -44,7 +44,7 @@ public class TerminateEmp extends AbstractComponents{
 	@FindBy(xpath="(//p[@class='oxd-text oxd-text--p oxd-text--subtitle-2'])[1]")
 	WebElement terVerify;
 	
-	public EmployeeList termEmp(String note, String EDate) {
+	public EmployeeList termEmp(String EDate, String note) {
 		termEmpBtn.click();
 		EndDate.sendKeys(EDate);
 		termReasonDropDown.click(); Listbox.get(0).click();
